@@ -1,0 +1,43 @@
+﻿@page
+@model SupplierModel
+@{
+    ViewData["Title"] = "Suppliers";
+}
+
+<h1>List all suppliers</h1>
+
+<button onclick="OnButtonClicked()" class = "btn btn-primary mb-3">Click me</button>
+<span id="result">This text is replaced by clicking the button!</span>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>City</th>
+        <th></th>
+    </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var supplier in Model.Suppliers)
+        {
+            <tr>
+                <td>@supplier.Name</td>  
+                <td>@supplier.City</td>  
+            <td>
+                <a asp-page="/ShowSupplier" asp-route-id="@supplier.Id" class="btn btn-secondary">Se info</a>
+            </td>
+            </tr>
+        }
+    </tbody>
+</table> 
+
+@section Scripts 
+{
+    <script>
+        function OnButtonClicked()
+        {
+            document.getElementById("result").innerText = "Button was clicked"
+        }
+    </script>
+}
