@@ -3,4 +3,18 @@
 @{
 }
 
-Hej
+<h1>Salary info</h1>
+
+<h3>Hej @Model.Name</h3>
+<p>Today is @Model.CurrentDay</p>
+
+@if (Model.SalaryType != "monthly")
+{
+    <h3>You don't have a monthly salary</h3>
+}
+else
+{
+    <h3>You do have a monthly salary</h3>
+}
+
+<p>@Model.Salary</p>
