@@ -2,7 +2,24 @@
 @model SupplierModel
 @{
     ViewData["Title"] = "Suppliers";
+
+    //Create our own list
+    var list = new List<string>()
+    {
+        "Item 1",
+        "Item 2",
+        "Item 3",
+    };
 }
+
+<div>
+    <ul>
+        @foreach (var str in list)
+       {
+           <li>@str</li>
+       }
+    </ul>
+</div>
 
 <h1>List all suppliers</h1>
 

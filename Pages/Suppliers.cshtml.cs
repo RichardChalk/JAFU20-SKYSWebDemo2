@@ -20,7 +20,7 @@ namespace SKYSWebDemo2.Pages
         public SupplierModel(ILogger<SupplierModel> logger, NorthwindContext dbContext)
         {
             _logger = logger;
-            _dbContext = dbContext;
+            _dbContext = dbContext; // Dependency injection
         }
 
         // A ViewModel that we have created
